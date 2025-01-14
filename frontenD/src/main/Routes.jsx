@@ -1,13 +1,16 @@
 import React from 'react';
-import { Router, Route, Redirect, hashHistory} from 'react-router'
+import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
 
 import Dashboard from '../dashboard/Dashboard';
 import BillingCycle from '../billingCycle/BillingCycle';
 
 export default props => (
-    <Router history={hashHistory}>
-        <Route path='/' component={Dashboard}/>
-        <Route path='/billingCycles' component={BillingCycle}/>
-        <Redirect from='*' to='/' />
-    </Router>
-)
+    <Router>
+    <Switch>
+        <Route exact path='/' component={Dashboard} />
+        <Route path='/billingCycles' component={BillingCycle} />
+        {/* Wildcard route to redirect all unmatched paths to the home page */}
+        <Redirect from= '*' to='/' />
+    </Switch>
+</Router>
+);

@@ -2,8 +2,6 @@ import React, { Component } from "react";
 
 export default props => {
     function toCssClasses(numbers) {
-        console.log('AQUI')
-        console.log(numbers)
         const cols = numbers ? numbers.split(' ') : []
         let classes = ''
 
