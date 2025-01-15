@@ -9,8 +9,7 @@ import Row from '../common/layout/row';
 
 const Dashboard = () => {
     const dispatch = useDispatch();
-    console.log('PPPPP');
-    console.log(useSelector);
+    
     // Access summary data from Redux store
     const { credit, debt } = useSelector(state => 
         state.dashboard.summary
