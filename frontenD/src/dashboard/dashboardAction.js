@@ -4,6 +4,7 @@ const BASE_URL = 'http://localhost:3003/api'
 export function getSummary() {
   const request = axios.get(`${BASE_URL}/billingCycles/summary`)
     .then(response => {
+
       return {
         type: 'BILLING_SUMMARY_FETCHED',
         payload: response.data
@@ -18,8 +19,7 @@ export function getSummary() {
     });
 
   // Return the promise to allow for async dispatching
-  return {
-    type: 'FETCH_BILLING_SUMMARY',
-    payload: request
-  };
+  console.log('VVVVVV')
+  console.log(request)
+  return request
 }

@@ -9,6 +9,9 @@ import TabHeader from "../common/tab/TabHeader";
 import TabContent from "../common/tab/TabContent";
 import { selecTab, showTabs } from "../common/tab/tabActions";
 import { useDispatch } from "react-redux";
+import BillingCycleList from "./BillingCycleList";
+import BiilingCycleForm from "./BillingCycleForm";
+import { create } from "./billingCycleAction";
 
 const BillingCycle = () => {
     const dispatch = useDispatch();
@@ -30,8 +33,12 @@ const BillingCycle = () => {
                         <TabHeader label='Eliminar' icon='trash-o' target='tabDelete' />
                     </TabsHeader>
                     <TabsContent>
-                        <TabContent id='tabList'><h1>Lista</h1></TabContent>
-                        <TabContent id='tabCreate'><h1>Adicionar</h1></TabContent>
+                        <TabContent id='tabList'>
+                            <BillingCycleList />
+                        </TabContent>
+                        <TabContent id='tabCreate'>
+                            <BiilingCycleForm onSubmit={(data) => dispatch(create(data))}/>
+                        </TabContent>
                         <TabContent id='tabUpdate'><h1>Alterar</h1></TabContent>
                         <TabContent id='tabDelete'><h1>Eliminar</h1></TabContent>
                     </TabsContent>

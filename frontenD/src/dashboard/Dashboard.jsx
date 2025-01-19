@@ -11,16 +11,15 @@ const Dashboard = () => {
     const dispatch = useDispatch();
     
     // Access summary data from Redux store
-    const { credit, debt } = useSelector(state => 
-        state.dashboard.summary
-            
-        );
+    const { credit, debt } = useSelector(state => state.dashboard.summary);
 
     // Fetch data on component mount
     useEffect(() => {
         dispatch(getSummary());
     }, [dispatch]);
-
+    console.log('MNMNMNMNM')
+    console.log(credit)
+    console.log(debt)
     return (
         <div>
             <ContentHeader title="Dashboard" small="Versão 1.0" />
