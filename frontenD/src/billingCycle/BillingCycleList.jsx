@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import { getList } from "./billingCycleAction";
+import { getList, showUpdate, showDelete } from "./billingCycleAction";
 import { useDispatch, useSelector } from "react-redux";
 
 const BillingCycleList = (props) => {
@@ -10,7 +10,7 @@ const BillingCycleList = (props) => {
 
     // Fetch data on component mount
     useEffect(() => {
-        dispatch(getList());
+        dispatch(getList());    
     }, [dispatch]);
 
     function renderRows() {
@@ -20,6 +20,14 @@ const BillingCycleList = (props) => {
                 <td>{element.name}</td>
                 <td>{element.month}</td>
                 <td>{element.year}</td>
+                <td>
+                    <button className="btn btn-warning" onClick={() => dispatch(showUpdate(element))}>
+                        <i className="fa fa-pencil"></i>
+                    </button>
+                    <button className="btn btn-danger" onClick={() => dispatch(showDelete(element))}>
+                        <i className="fa fa-trash-o"></i>
+                    </button>
+                </td>
             </tr>
         ))
     }
@@ -32,6 +40,7 @@ const BillingCycleList = (props) => {
                         <th>Nome</th>
                         <th>Mês</th>
                         <th>Ano</th>
+                        <th className="table-actions">Ações</th>
                     </tr>
                 </thead>
                 <tbody>

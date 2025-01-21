@@ -5,16 +5,17 @@ import 'react-toastify/dist/ReactToastify.css';
 export default props => {
     return (
     <ToastContainer position="top-right"
-    autoClose={5000}
-    hideProgressBar={false}
+    autoClose={3000}
+    hideProgressBar={true}
     newestOnTop={false}
     closeOnClick={false}
     rtl={false}
     pauseOnFocusLoss
     draggable
     pauseOnHover
-    theme="light"
+    theme="dark"
     transition={Bounce}
-    shouldIgnoreToast={true}/>
+    shouldIgnoreToast={true}
+    limit={3}/>
 )
 }
