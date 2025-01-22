@@ -5,7 +5,7 @@ import { getSummary } from './dashboardAction';
 import ContentHeader from '../common/template/contentHeader';
 import Content from '../common/template/content';
 import ValueBox from '../common/widget/valueBox';
-import Row from '../common/layout/row';
+import Row from '../common/layout/Row';
 
 const Dashboard = () => {
     const dispatch = useDispatch();
