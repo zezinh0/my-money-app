@@ -7,7 +7,8 @@ import promise from 'redux-promise'
 import multi from 'redux-multi'
 import thunk from 'redux-thunk'
 
-import App from './main/app'
+
+import AuthOrApp from './main/AuthOrApp'
 import reducers from './main/Reducers'
 
 
@@ -22,7 +23,7 @@ const store = createStore(
 
 ReactDOM.render(
     <Provider store={store}>
-        <App/>
+        <AuthOrApp />
     </Provider>
 
 , document.getElementById('app')) 
