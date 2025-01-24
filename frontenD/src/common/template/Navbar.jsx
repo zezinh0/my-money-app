@@ -5,7 +5,7 @@ import { logout } from '../../auth/authActions';
 const Navbar = () => {
     // Local state for dropdown menu
     const [open, setOpen] = useState(false);
-    console.log('SGSDUYGT')
+
     // Access user info from Redux store
     const { name, email } = useSelector(state => state.auth.user);
 

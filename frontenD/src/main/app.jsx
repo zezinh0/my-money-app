@@ -17,7 +17,7 @@ export default (props) => {
                 <Routes />
             </div>
             <Footer />
-            <Messages />
+            <Messages /> 
         </div>
     )
 }

@@ -11,14 +11,17 @@ export function signup(values) {
 }
 
 function submit(values, url) {
+
     return dispatch => {
         axios.post(url, values)
             .then(resp => {
+
                 dispatch([
                     { type: 'USER_FETCHED', payload: resp.data }
                 ])
             })
             .catch(e => {
+  
                 e.response.data.errors.forEach(
                     error => toast.error(error))
             })

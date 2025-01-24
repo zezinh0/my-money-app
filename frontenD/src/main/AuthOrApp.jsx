@@ -10,7 +10,7 @@ const AuthOrApp = (props) => {
     // Access auth state from Redux store
     const auth = useSelector(state => state.auth);
     const dispatch = useDispatch();
-    console.log('AKKKKKKKKKKKKKKK')
+
     // Run side effect on component mount to validate the token
     useEffect(() => {
         if (auth.user) {
@@ -24,10 +24,10 @@ const AuthOrApp = (props) => {
     // Conditionally render based on user and token validation
     if (user && validToken) {
         axios.defaults.headers.common['authorization'] = user.token;
-        console.log('OIOIOIO')
+
         return <App>{props.children}</App>;
     } else if (!user && !validToken) {
-        console.log('ASADASDSA')
+
         return <Auth />;
     } else {
         return false; // Return nothing if the user is in an intermediate state

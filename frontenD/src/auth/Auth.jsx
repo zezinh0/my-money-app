@@ -3,10 +3,9 @@ import React, { useState } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { useDispatch } from 'react-redux';
 import { login, signup } from './authActions';
-import Row from '../common/layout/row';
+import Row from '../common/layout/Row';
 import Grid from '../common/layout/Grid';
-import If from '../common/operator/If';
-import Messages from '../common/msg/messages';
+import Messages from '../common/msg/Messages';
 import Input from '../common/form/InputAuth';
 
 const Auth = (props) => {

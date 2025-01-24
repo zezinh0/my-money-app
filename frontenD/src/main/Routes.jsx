@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-d
 
 
 import BillingCycle from '../billingCycle/BillingCycle';
-import AuthOrApp from './AuthOrApp'
+
 import Dashboard from '../dashboard/Dashboard'
 
 export default props => (
