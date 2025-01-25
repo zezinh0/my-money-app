@@ -11,6 +11,9 @@ module.exports = {
         contentBase: './public',
         port: 8080,
         historyApiFallback: true,
+        allowedHosts: ['all'],
+        
+        
 
     },
     resolve: {

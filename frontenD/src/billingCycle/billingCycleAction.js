@@ -2,6 +2,7 @@ import axios from 'axios'
 import { toast } from 'react-toastify';
 import { initialize, reset as resetForm } from 'redux-form';
 import { showTabs, selecTab } from '../common/tab/tabActions';
+import rootReducer from '../main/Reducers'
 
 const BASE_URL = 'http://localhost:3003/api'
 const INITIAL_VALUES = {credits: [{}], debts: [{}]}
@@ -9,16 +10,14 @@ const INITIAL_VALUES = {credits: [{}], debts: [{}]}
 export function getList() {
     const request = axios.get(`${BASE_URL}/billingCycles`)
         .then(response => {
-            console.log('H1')
-            console.log(response)
+
             return {
                 type: 'BILLING_CYCLES_FETCHED',
                 payload: response.data
             };
         })
         .catch(error => {
-            console.log('H2')
-            console.error('Error fetching summary:', error);
+
             return {
                 type: 'BILLING_CYCLES_FETCH_FAILED', // Custom action for failed request
                 payload: null  // Could set a message or null if no data
@@ -30,7 +29,6 @@ export function getList() {
 
 
 export function create(values) {
-
     return submit(values, 'post')
 }
 
@@ -45,9 +43,7 @@ export function remove(values) {
 }
 
 function submit (values, method) {
-    console.log('popopopopopo')
-    console.log(values.debts.length)
-    console.log(values)
+
     return dispatch => {
         const id = values._id ? values._id : ''
         axios[method](`${BASE_URL}/billingCycles/${id}`, values)
@@ -56,8 +52,7 @@ function submit (values, method) {
                 dispatch(init())
             })
             .catch(e => {
-                console.log('hghghg')
-                console.log(e.response)
+
                 if (e.response) {
                     e.response.data.errors.forEach((error, index) => { toast.error(error, { toastId: `error-toast-${index}` }); });
                 } else {

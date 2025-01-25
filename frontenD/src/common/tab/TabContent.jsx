@@ -4,9 +4,9 @@ import { useSelector } from "react-redux";
 import If from "../operator/If";
 
 const TabContent = (props) => {
-    console.log('AAAAAA')
+
     const tab = useSelector(state => state.tab);
-    console.log(tab)
+
     const selected = tab.selected === props.id
     const visible = tab.visible[props.id]
 

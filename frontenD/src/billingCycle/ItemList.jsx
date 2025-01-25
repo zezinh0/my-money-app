@@ -23,7 +23,7 @@ const ItemList = (props) => {
 
     function renderRows() {
         const list = props.list || []
-        console.log(list)
+
         return list.map((item, index) => (
             <tr key={index}>
                 <td><Field name={`${props.field}[${index}].name`} component={Input} placeholder="Informe o nome" readOnly={props.readOnly} /></td>

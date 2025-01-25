@@ -23,7 +23,7 @@ const AuthOrApp = (props) => {
 
     // Conditionally render based on user and token validation
     if (user && validToken) {
-        axios.defaults.headers.common['authorization'] = user.token;
+        axios.defaults.headers.common['authorization'] = `Bearer ${user.token}`;
 
         return <App>{props.children}</App>;
     } else if (!user && !validToken) {

@@ -19,7 +19,6 @@ export function getSummary() {
     });
 
   // Return the promise to allow for async dispatching
-  console.log('VVVVVV')
-  console.log(request)
+
   return request
 }

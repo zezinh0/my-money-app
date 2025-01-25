@@ -17,9 +17,7 @@ const Dashboard = () => {
     useEffect(() => {
         dispatch(getSummary());
     }, [dispatch]);
-    console.log('MNMNMNMNM')
-    console.log(credit)
-    console.log(debt)
+
     return (
         <div>
             <ContentHeader title="Dashboard" small="Versão 1.0" />
